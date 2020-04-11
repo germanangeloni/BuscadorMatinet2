@@ -11,8 +11,10 @@ import { ServicesComponent } from './services/services.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './components/posts/posts.component';
 import {RouterModule, Routes} from '@angular/router';
-import { FilterPipe } from './pipes/filter.pipe';
+
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './components/posts/pipes/filter.pipe';
+
 const appRoutes: Routes = [
 
 { path: 'login', component: LoginComponent},
@@ -35,13 +37,13 @@ const appRoutes: Routes = [
     PostsComponent,
     ProfilesComponent,
     SettingsComponent,
-    ServicesComponent,
-    FilterPipe
-    
+    FilterPipe,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
